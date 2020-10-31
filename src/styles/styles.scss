@@ -67,11 +67,19 @@ a {
   padding: 0.7rem;
   padding-top: 0;
   background-color: white;
+  position: relative;
 
   @media (min-width: 500px) {
     width: 500px;
     padding: 2rem;
     padding-top: 0;
+  }
+
+  .init-message {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
   }
 }
 

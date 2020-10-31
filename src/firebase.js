@@ -15,19 +15,6 @@ const firebaseConfig = {
 
 firebase.initializeApp(firebaseConfig);
 
-// // Your web app's Firebase configuration
-// var firebaseConfig = {
-//   apiKey: 'AIzaSyCQUWX7kDWfIViV6OmASNUkJfZPCw-NpnE',
-//   authDomain: 'twiter-clone-24cd4.firebaseapp.com',
-//   databaseURL: 'https://twiter-clone-24cd4.firebaseio.com',
-//   projectId: 'twiter-clone-24cd4',
-//   storageBucket: 'twiter-clone-24cd4.appspot.com',
-//   messagingSenderId: '6713186371',
-//   appId: '1:6713186371:web:ded9678050d349623e9cf6'
-// };
-// // Initialize Firebase
-// firebase.initializeApp(firebaseConfig);
-
 const firebaseAuth = firebase.auth();
 const firebaseStore = firebase.firestore();
 const firebaseStorage = firebase.storage();

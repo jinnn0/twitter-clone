@@ -3,10 +3,10 @@ import EditModal from '../components/EditModal';
 import Tweet from '../components/Tweet';
 import TweetForm from '../components/TweetForm';
 import { firebaseStore, firebaseStorage } from '../firebase';
-import { useStore } from '../hooks/firebaseHooks';
+import useFirestore from '../hooks/useFirestore';
 
 const Home = ({ currentUser }) => {
-  const tweets = useStore();
+  const tweets = useFirestore();
   const [shouldModalOpen, setShouldModalOpen] = useState(false);
   const [targetTweet, setTargetTweet] = useState(null);
   const [updatedTweet, setUpdatedTweet] = useState('');
@@ -37,8 +37,6 @@ const Home = ({ currentUser }) => {
     setShouldModalOpen(true);
     setTargetTweet(tweet);
   };
-
-  console.log(currentUser);
 
   return (
     <div className="home">

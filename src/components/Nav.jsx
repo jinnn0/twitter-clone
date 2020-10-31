@@ -7,7 +7,7 @@ const Nav = ({ currentUser }) => {
     <nav>
       <Link to="/profile" className="link_profile">
         <FaUser className="link_icon" />
-        {currentUser ? currentUser.displayName : 'My Profile'}
+        {currentUser.displayName ? currentUser.displayName : currentUser.email}
       </Link>
     </nav>
   );

@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { useStorage } from '../hooks/firebaseHooks';
+import useFirestorage from '../hooks/useFirestorage';
 import { firebaseStorage } from '../firebase';
 import { FaArrowRight } from 'react-icons/fa';
 import { IoMdAddCircle } from 'react-icons/io';
@@ -7,7 +7,7 @@ import { IoMdAddCircle } from 'react-icons/io';
 const TweetForm = ({ currentUser, addTweet }) => {
   const [text, setTweet] = useState('');
   const [file, setFile] = useState(null);
-  const [url, setUrl] = useStorage(currentUser, file);
+  const [url, setUrl] = useFirestorage(currentUser, file);
 
   const handleInput = (e) => {
     setTweet(e.target.value);

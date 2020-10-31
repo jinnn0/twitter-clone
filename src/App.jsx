@@ -36,7 +36,7 @@ function App() {
       {init ? (
         <Router isLoggedIn={isLoggedIn} currentUser={currentUser} refreshCurrentUser={refreshCurrentUser} />
       ) : (
-        'initializing..'
+        <h3 className="init-message">initializing..</h3>
       )}
     </div>
   );
