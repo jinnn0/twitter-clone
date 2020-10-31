@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import './styles/styles.scss';
 import { firebaseAuth } from './firebase';
 import Router from './components/Router';
 
@@ -14,6 +15,7 @@ function App() {
         setCurrentUse(user);
         setCurrentUse({
           displayName: user.displayName,
+          email: user.email,
           uid: user.uid,
           updateProfile: (argg) => user.updateProfile(argg)
         });

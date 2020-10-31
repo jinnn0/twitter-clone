@@ -1,23 +1,21 @@
 import React from 'react';
+import { RiDeleteBinLine } from 'react-icons/ri';
+import { FiEdit2 } from 'react-icons/fi';
 
 const Tweet = ({ tweet, isCreator, deleteTweet, openEditModal }) => {
   return (
-    <>
-      <li>
-        <span className="text">{tweet.text}</span>
-        {tweet.url && <img src={tweet.url} width="50px" height="50px" alt="img" />}
+    <li className="tweet">
+      <div className="row-1">{tweet.url && <img src={tweet.url} alt="img" />}</div>{' '}
+      <div className="row-2">
+        <span className="tweet__text">{tweet.text}</span>
         {isCreator && (
           <>
-            <button onClick={() => deleteTweet(tweet.id, tweet.url)} className="delete">
-              delete
-            </button>
-            <button onClick={() => openEditModal(tweet)} className="edit">
-              edit
-            </button>
+            <RiDeleteBinLine className="icon delete-icon" onClick={() => deleteTweet(tweet.id, tweet.url)} />
+            <FiEdit2 className="icon" onClick={() => openEditModal(tweet)} />
           </>
         )}
-      </li>
-    </>
+      </div>
+    </li>
   );
 };
 

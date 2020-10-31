@@ -1,6 +1,8 @@
 import React from 'react';
 import { firebase } from '../firebase';
 import { firebaseAuth } from '../firebase';
+import { FcGoogle } from 'react-icons/fc';
+import { FaFacebook } from 'react-icons/fa';
 
 const AuthProvider = () => {
   const handleSocialClick = async (e) => {
@@ -20,11 +22,13 @@ const AuthProvider = () => {
   };
 
   return (
-    <div>
-      <button name="google" onClick={handleSocialClick}>
+    <div className="auth-provider">
+      <button className="provider_btn google" name="google" onClick={handleSocialClick}>
+        <FcGoogle className="social-icon" />
         Continue with Google
       </button>
-      <button name="facebook" onClick={handleSocialClick}>
+      <button className="provider_btn facebook" name="facebook" onClick={handleSocialClick}>
+        <FaFacebook className="social-icon" />
         Continue with Facebook
       </button>
     </div>

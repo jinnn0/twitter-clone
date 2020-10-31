@@ -38,10 +38,12 @@ const Home = ({ currentUser }) => {
     setTargetTweet(tweet);
   };
 
+  console.log(currentUser);
+
   return (
-    <div>
+    <div className="home">
       <TweetForm currentUser={currentUser} addTweet={addTweet} />
-      <ul>
+      <ul className="tweets">
         {tweets.map((tweet) => (
           <Tweet
             key={tweet.id}

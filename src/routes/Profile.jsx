@@ -24,13 +24,16 @@ const Profile = ({ currentUser, refreshCurrentUser }) => {
   };
 
   return (
-    <>
+    <div className="profile">
       <form onSubmit={handleSubmit}>
         <input type="text" placeholder="Display name" value={newDisplayName} onChange={handleDisplayName} />
-        <input type="submit" value="Update profile" />
+        <input type="submit" value="Update profile" className="input-submit" />
       </form>
-      <button onClick={handleLogOut}>Log Out</button>
-    </>
+      <span className="line"></span>
+      <button onClick={handleLogOut} className="logout-btn">
+        Log Out
+      </button>
+    </div>
   );
 };
 

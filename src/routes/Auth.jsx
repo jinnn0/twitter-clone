@@ -4,10 +4,10 @@ import AuthProvider from '../components/AuthProvider';
 
 const Auth = () => {
   return (
-    <div>
+    <>
       <AuthForm />
       <AuthProvider />
-    </div>
+    </>
   );
 };
 
