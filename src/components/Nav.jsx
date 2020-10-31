@@ -3,11 +3,18 @@ import { Link } from 'react-router-dom';
 import { FaUser } from 'react-icons/fa';
 
 const Nav = ({ currentUser }) => {
+  let displayName;
+  if (currentUser) {
+    displayName = currentUser.displayName ? currentUser.displayName : currentUser.email;
+  } else {
+    displayName = null;
+  }
+
   return (
     <nav>
       <Link to="/profile" className="link_profile">
         <FaUser className="link_icon" />
-        {currentUser.displayName ? currentUser.displayName : currentUser.email}
+        {displayName}
       </Link>
     </nav>
   );

@@ -6,14 +6,14 @@ import Router from './components/Router';
 function App() {
   const [init, setInit] = useState(false);
   const [isLoggedIn, setIsLoggedIn] = useState(false);
-  const [currentUser, setCurrentUse] = useState(null);
+  const [currentUser, setCurrentUser] = useState(null);
 
   useEffect(() => {
     firebaseAuth.onAuthStateChanged((user) => {
       if (user) {
         setIsLoggedIn(true);
-        setCurrentUse(user);
-        setCurrentUse({
+        setCurrentUser(user);
+        setCurrentUser({
           displayName: user.displayName,
           email: user.email,
           uid: user.uid,
@@ -28,7 +28,7 @@ function App() {
   }, []);
 
   const refreshCurrentUser = () => {
-    setCurrentUse(firebaseAuth.currentUser);
+    setCurrentUser(firebaseAuth.currentUser);
   };
 
   return (
