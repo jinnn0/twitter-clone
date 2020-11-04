@@ -1,38 +1,26 @@
 import React, { useState } from 'react';
 import { firebaseAuth } from '../firebase';
 import { useHistory } from 'react-router-dom';
+import ProfileMain from 'components/ProfileMain';
 
-const Profile = ({ currentUser, refreshCurrentUser }) => {
+const Profile = ({ currentUser }) => {
   let history = useHistory();
-  const [newDisplayName, setNewDisplayName] = useState(currentUser.displayName);
+  const [isEditBtnClick, setIsEditBtnClick] = useState(false);
 
   const handleLogOut = () => {
     firebaseAuth.signOut();
     history.push('/');
   };
 
-  const handleDisplayName = (e) => {
-    setNewDisplayName(e.target.value);
-  };
-
-  const handleSubmit = async (e) => {
-    e.preventDefault();
-    if (newDisplayName !== currentUser.displayName) {
-      await currentUser.updateProfile({ displayName: newDisplayName });
-      refreshCurrentUser();
-    }
-  };
-
   return (
-    <div className="profile">
-      <form onSubmit={handleSubmit}>
-        <input type="text" placeholder="Display name" value={newDisplayName} onChange={handleDisplayName} />
-        <input type="submit" value="Update profile" className="input-submit" />
-      </form>
-      <span className="line"></span>
-      <button onClick={handleLogOut} className="logout-btn">
-        Log Out
-      </button>
+    <div className="profile-container">
+      <div className="profile">
+        <ProfileMain
+          currentUser={currentUser}
+          handleLogOut={handleLogOut}
+          setIsEditBtnClick={setIsEditBtnClick}
+        />
+      </div>
     </div>
   );
 };
