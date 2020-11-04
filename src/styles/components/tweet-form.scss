@@ -1,57 +1,83 @@
 .tweet-form-container {
   width: 100%;
-  position: relative;
-  margin-bottom: 2rem;
+  height: 200px;
+  display: flex;
+  border-bottom: 10px solid rgb(230, 236, 240);
+  padding: 0.3rem 0.3rem;
 
-  .tweet-form {
-    width: 100%;
+  .col-1 {
+    width: 60px;
+
+    .profile-img {
+      width: 100%;
+      height: 60px;
+      display: flex;
+      align-items: center;
+      border-radius: 50%;
+    }
+
+    svg,
+    img {
+      width: 100%;
+    }
+
+    svg {
+      color: var(--primary);
+      width: 60px;
+      height: 60px;
+    }
+  }
+
+  .tweet-form.col-2 {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
 
     .row-1 {
-      display: flex;
-      position: relative;
+      flex: 1.1;
+      border-bottom: 1px solid var(--border);
 
       .input-text {
-        flex: 1;
-        padding-right: 60px;
-        border: 1px solid var(--primary);
-      }
-
-      .input-submit {
-        position: absolute;
-        right: 0;
-        background-color: var(--primary);
-        height: 100%;
-        width: 50px;
-        padding: 10px 0px;
-        text-align: center;
-        border-radius: 30px;
-        color: white;
+        width: 100%;
+        border-radius: 0;
         border: none;
-        margin: 0;
+        background-color: transparent;
+
+        &::placeholder {
+          font-size: 1.2rem;
+        }
       }
     }
 
     .row-2 {
-      .add-photo-label {
+      flex: 1;
+      display: flex;
+      align-items: center;
+
+      label {
         display: flex;
         align-items: center;
-        justify-content: center;
-        width: 100%;
-        height: 80px;
+      }
 
-        span {
-          margin-right: 0.9rem;
-        }
-
-        .add-photo-icon {
-          color: var(--primary);
-          font-size: 1.5rem;
-          cursor: pointer;
-        }
+      svg {
+        margin-right: 0.7rem;
+        font-size: 1.2rem;
+        cursor: pointer;
       }
 
       .add-photo-input {
         display: none;
+      }
+
+      .input-submit {
+        background-color: var(--primary);
+        width: 90px;
+        padding: 10px 0px;
+        text-align: center;
+        border-radius: 30px;
+        color: white;
+        margin: 0;
+        margin-left: auto;
       }
     }
   }

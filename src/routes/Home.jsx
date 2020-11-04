@@ -40,6 +40,9 @@ const Home = ({ currentUser }) => {
 
   return (
     <div className="home">
+      <div className="header">
+        <h3>Home</h3>
+      </div>
       <TweetForm currentUser={currentUser} addTweet={addTweet} />
       <ul className="tweets">
         {tweets.map((tweet) => (

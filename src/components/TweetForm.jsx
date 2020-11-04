@@ -1,8 +1,12 @@
 import React, { useState } from 'react';
 import useFirestorage from '../hooks/useFirestorage';
-import { firebaseStorage } from '../firebase';
-import { FaArrowRight } from 'react-icons/fa';
-import { IoMdAddCircle } from 'react-icons/io';
+// import { firebaseStorage } from '../firebase';
+import { HiUserCircle } from 'react-icons/hi';
+import { BiImage } from 'react-icons/bi';
+import { AiOutlineGif } from 'react-icons/ai';
+import { RiBarChartHorizontalFill } from 'react-icons/ri';
+import { GrEmoji } from 'react-icons/gr';
+import { GrSchedulePlay } from 'react-icons/gr';
 
 const TweetForm = ({ currentUser, addTweet }) => {
   const [text, setTweet] = useState('');
@@ -27,49 +31,59 @@ const TweetForm = ({ currentUser, addTweet }) => {
     }
   };
 
-  const handleCloseImg = () => {
-    setFile(null);
-    setUrl('');
-    firebaseStorage.refFromURL(url).delete();
-  };
+  // const handleCloseImg = () => {
+  //   setFile(null);
+  //   setUrl('');
+  //   firebaseStorage.refFromURL(url).delete();
+  // };
 
   return (
     <div className="tweet-form-container">
-      <form onSubmit={handleSubmit} className="tweet-form">
+      <div className="col-1">
+        <div className="profile-img">
+          <HiUserCircle />
+          {/* <img src="" alt="user-img" className="user-img" /> */}
+        </div>
+      </div>
+
+      <form onSubmit={handleSubmit} className="tweet-form col-2">
         <div className="row-1">
           <input
             type="text"
             className="input-text"
             value={text}
             onChange={handleInput}
-            placeholder="what's on your mind?"
+            placeholder="What's happening ?"
           />
-          <button type="submit" className="input-submit">
-            <FaArrowRight />
-          </button>
         </div>
 
         <div className="row-2">
           <label htmlFor="add-photo" className="add-photo-label">
-            <span>Add photo</span>
-            <IoMdAddCircle className="add-photo-icon" />
+            <BiImage className="add-photo-icon" />
+            <input
+              id="add-photo"
+              className="add-photo-input"
+              type="file"
+              accept="image/*"
+              onChange={handleFileUpload}
+            />
           </label>
-          <input
-            id="add-photo"
-            className="add-photo-input"
-            type="file"
-            accept="image/*"
-            onChange={handleFileUpload}
-          />
+          <AiOutlineGif />
+          <RiBarChartHorizontalFill />
+          <GrEmoji />
+          <GrSchedulePlay />
+          <button type="submit" className="input-submit">
+            Tweet
+          </button>
         </div>
       </form>
 
-      {file && (
+      {/* {file && (
         <div className="photo-snippet-container">
           <img src={url} alt="img" />
           <button onClick={handleCloseImg}>Clear</button>
         </div>
-      )}
+      )} */}
     </div>
   );
 };
