@@ -22,9 +22,9 @@ const ProfileEditModal = ({ currentUser, refreshCurrentUser, setIsEditBtnClick }
     setIsEditBtnClick(false);
   });
   return (
-    <div className="edit-modal-container">
-      <form ref={editFormRef} onSubmit={handleSubmit} className="edit-modal">
-        <div className="edit-modal__row-1">
+    <div className="edit-modal">
+      <form ref={editFormRef} onSubmit={handleSubmit} className="edit-modal-form">
+        <div className="edit-modal-form__row-1">
           <AiIcons.AiOutlineClose className="close" />
           <h3>Edit profile</h3>
           <button type="submit" className="save">
@@ -32,7 +32,7 @@ const ProfileEditModal = ({ currentUser, refreshCurrentUser, setIsEditBtnClick }
           </button>
         </div>
 
-        <div className="edit-modal__row-2">
+        <div className="edit-modal-form__row-2">
           <label htmlFor="bg-img">
             <AiIcons.AiOutlineCamera className="camera" />
             <AiIcons.AiOutlineClose className="close" />
@@ -40,7 +40,7 @@ const ProfileEditModal = ({ currentUser, refreshCurrentUser, setIsEditBtnClick }
           </label>
         </div>
 
-        <div className="edit-modal__row-3">
+        <div className="edit-modal-form__row-3">
           <div className="profile-img">
             {currentUser.profilePhoto ? (
               <img src={currentUser.profilePhoto} alt="" />
@@ -55,7 +55,7 @@ const ProfileEditModal = ({ currentUser, refreshCurrentUser, setIsEditBtnClick }
           </div>
         </div>
 
-        <div className="edit-modal__row-4">
+        <div className="edit-modal-form__row-4">
           <label htmlFor="name">Name</label>
           <input
             type="text"
@@ -66,12 +66,12 @@ const ProfileEditModal = ({ currentUser, refreshCurrentUser, setIsEditBtnClick }
           />
         </div>
 
-        <div className="edit-modal__row-5">
+        <div className="edit-modal-form__row-5">
           <label htmlFor="bio">Bio</label>
           <textarea type="text" id="name" className="input" />
         </div>
 
-        <div className="edit-modal__row-6">
+        <div className="edit-modal-form__row-6">
           <label htmlFor="location">Location</label>
           <input type="text" id="location" className="input" />
         </div>

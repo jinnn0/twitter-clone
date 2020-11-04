@@ -1,0 +1,80 @@
+.tweet-form-container {
+  width: 100%;
+  position: relative;
+  margin-bottom: 2rem;
+
+  .tweet-form {
+    width: 100%;
+
+    .row-1 {
+      display: flex;
+      position: relative;
+
+      .input-text {
+        flex: 1;
+        padding-right: 60px;
+        border: 1px solid var(--primary);
+      }
+
+      .input-submit {
+        position: absolute;
+        right: 0;
+        background-color: var(--primary);
+        height: 100%;
+        width: 50px;
+        padding: 10px 0px;
+        text-align: center;
+        border-radius: 30px;
+        color: white;
+        border: none;
+        margin: 0;
+      }
+    }
+
+    .row-2 {
+      .add-photo-label {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 100%;
+        height: 80px;
+
+        span {
+          margin-right: 0.9rem;
+        }
+
+        .add-photo-icon {
+          color: var(--primary);
+          font-size: 1.5rem;
+          cursor: pointer;
+        }
+      }
+
+      .add-photo-input {
+        display: none;
+      }
+    }
+  }
+
+  .photo-snippet-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 10px;
+    border: 1px solid var(--border);
+    padding: 0.2rem;
+    position: relative;
+
+    img {
+      width: 50%;
+      height: 150px;
+    }
+
+    button {
+      position: absolute;
+      right: 10px;
+      bottom: 10px;
+      padding: 0.4rem 1rem;
+    }
+  }
+}

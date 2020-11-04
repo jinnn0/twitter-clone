@@ -14,14 +14,12 @@ const Profile = ({ currentUser, refreshCurrentUser }) => {
   };
 
   return (
-    <div className="profile-container">
-      <div className="profile">
-        <ProfileMain
-          currentUser={currentUser}
-          handleLogOut={handleLogOut}
-          setIsEditBtnClick={setIsEditBtnClick}
-        />
-      </div>
+    <div className="profile">
+      <ProfileMain
+        currentUser={currentUser}
+        handleLogOut={handleLogOut}
+        setIsEditBtnClick={setIsEditBtnClick}
+      />
       {isEditBtnClick ? (
         <ProfileEditModal
           currentUser={currentUser}

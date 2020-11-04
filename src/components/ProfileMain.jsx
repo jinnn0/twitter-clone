@@ -21,13 +21,13 @@ const ProfileMain = ({ currentUser, handleLogOut, setIsEditBtnClick }) => {
   });
 
   return (
-    <>
-      <div className="profile__row-1">
+    <div className="profile-main">
+      <div className="profile-main__row-1">
         {/* <img src="" alt="background" /> */}
         <div className="default-bg"></div>
       </div>
 
-      <div className="profile__row-2">
+      <div className="profile-main__row-2">
         <div className="profile-img">
           {currentUser.profilePhoto ? (
             <img src={currentUser.profilePhoto} alt="profile" />
@@ -48,17 +48,17 @@ const ProfileMain = ({ currentUser, handleLogOut, setIsEditBtnClick }) => {
         ) : null}
       </div>
 
-      <div className="profile__row-3">
+      <div className="profile-main__row-3">
         {currentUser.displayName ? currentUser.displayName : currentUser.email}
       </div>
 
-      <div className="profile__row-4">art, visuals and technology</div>
+      <div className="profile-main__row-4">art, visuals and technology</div>
 
-      <div className="profile__row-5">
+      <div className="profile-main__row-5">
         <GoLocation className="icon " /> Dublin
         <BsCalendar className="icon calendar" /> Joined August 2018
       </div>
-    </>
+    </div>
   );
 };
 
