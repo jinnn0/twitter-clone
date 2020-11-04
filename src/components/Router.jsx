@@ -3,14 +3,12 @@ import { HashRouter, Route, Switch } from 'react-router-dom';
 import Auth from '../routes/Auth';
 import Home from '../routes/Home';
 import Profile from '../routes/Profile';
-import Header from './Header';
-import Nav from './Nav';
+import SideBar from './SideBar';
 
 const Router = ({ isLoggedIn, currentUser, refreshCurrentUser }) => {
   return (
     <HashRouter>
-      <Header />
-      {isLoggedIn && <Nav currentUser={currentUser} />}
+      <SideBar />
       <Switch>
         {isLoggedIn ? (
           <>

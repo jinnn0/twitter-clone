@@ -1,0 +1,66 @@
+.sidebar {
+  @media (min-width: 750px) {
+    flex: 1;
+  }
+
+  ul {
+    width: 100%;
+    padding: 1rem 1rem;
+
+    @media (min-width: 750px) {
+      padding: 1rem 2rem;
+    }
+
+    li {
+      display: flex;
+      align-items: center;
+      margin-bottom: 1rem;
+      border-radius: 20px;
+      padding: 0.5rem 0.7rem;
+      cursor: pointer;
+
+      @media (min-width: 750px) {
+        padding: 1rem 2rem;
+        border-radius: 40px;
+        font-weight: bold;
+      }
+
+      .twitter-icon {
+        display: flex;
+        align-items: center;
+        font-weight: bold;
+        color: var(--primary);
+      }
+
+      a {
+        width: 100%;
+      }
+
+      svg {
+        font-size: 1.3rem;
+        color: rgba(0, 0, 0, 0.795);
+
+        @media (min-width: 750px) {
+          margin-right: 1rem;
+        }
+      }
+
+      span {
+        display: none;
+
+        @media (min-width: 750px) {
+          display: inline-block;
+        }
+      }
+
+      &:hover {
+        background-color: rgb(233, 246, 253);
+        color: var(--primary);
+
+        svg {
+          color: var(--primary);
+        }
+      }
+    }
+  }
+}
