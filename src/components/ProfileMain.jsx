@@ -38,11 +38,11 @@ const ProfileMain = ({ currentUser, handleLogOut, setIsEditBtnClick }) => {
         <button ref={editBtnRef} className="edit-btn" onClick={openProfileEditModal}>
           Edit profile
         </button>
-        <div ref={moreBtnRef} className="more-btn" onClick={openLogOutBtn}>
+        <div className="more-btn" onClick={openLogOutBtn}>
           :
         </div>
         {isMoreBtnClicked ? (
-          <div className="logout" onClick={handleLogOut}>
+          <div ref={moreBtnRef} className="logout" onClick={handleLogOut}>
             Log out
           </div>
         ) : null}

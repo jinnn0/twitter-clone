@@ -1,5 +1,12 @@
+// .profile-main {
+//   background-color: peru;
+// }
+
+// nav {
+//   background-color: rgb(245, 248, 250);
+// }
+
 .profile {
-  height: 460px;
   border: 1px solid var(--border);
 
   /* ProfileMain */
@@ -60,7 +67,7 @@
       }
 
       .edit-btn {
-        padding: 5px 8px;
+        padding: 0.7rem 1rem;
         border-radius: 30px;
         margin-left: auto;
         border: 1px solid var(--primary);
@@ -79,7 +86,8 @@
         border: 1px solid rgba(0, 0, 0, 0.164);
         position: absolute;
         top: 18px;
-        right: 12px;
+        // right: 12px;
+        right: 100px;
         width: 120px;
         height: 40px;
         border-radius: 5px;
@@ -294,12 +302,23 @@
 
     ul {
       width: 100%;
+      height: 100%;
       display: flex;
-      justify-content: space-around;
+      align-items: center;
       color: rgb(134, 147, 159);
+
+      li {
+        height: 100%;
+        flex: 1;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        cursor: pointer;
+      }
 
       li:nth-child(1) {
         color: var(--primary);
+        border-bottom: 2px solid var(--primary);
       }
     }
   }

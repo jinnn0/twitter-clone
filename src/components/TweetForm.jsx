@@ -3,7 +3,7 @@ import useFirestorage from '../hooks/useFirestorage';
 // import { firebaseStorage } from '../firebase';
 import { HiUserCircle } from 'react-icons/hi';
 import { BiImage } from 'react-icons/bi';
-import { AiOutlineGif } from 'react-icons/ai';
+import { MdGif } from 'react-icons/md';
 import { RiBarChartHorizontalFill } from 'react-icons/ri';
 import { GrEmoji } from 'react-icons/gr';
 import { GrSchedulePlay } from 'react-icons/gr';
@@ -68,7 +68,7 @@ const TweetForm = ({ currentUser, addTweet }) => {
               onChange={handleFileUpload}
             />
           </label>
-          <AiOutlineGif />
+          <MdGif />
           <RiBarChartHorizontalFill />
           <GrEmoji />
           <GrSchedulePlay />

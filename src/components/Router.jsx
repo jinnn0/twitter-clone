@@ -10,7 +10,7 @@ const Router = ({ isLoggedIn, currentUser, refreshCurrentUser }) => {
     <HashRouter>
       <Switch>
         {isLoggedIn ? (
-          <>
+          <div className="main">
             <SideBar />
             <Route exact path="/" component={() => <Home currentUser={currentUser} />} />
             <Route
@@ -18,7 +18,7 @@ const Router = ({ isLoggedIn, currentUser, refreshCurrentUser }) => {
               path="/profile"
               component={() => <Profile currentUser={currentUser} refreshCurrentUser={refreshCurrentUser} />}
             />
-          </>
+          </div>
         ) : (
           <>
             <Route exact path="/" component={Auth} />

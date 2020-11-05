@@ -11,6 +11,8 @@ const Profile = ({ currentUser, refreshCurrentUser }) => {
   const handleLogOut = () => {
     firebaseAuth.signOut();
     history.push('/');
+
+    console.log('logout');
   };
 
   return (
@@ -29,10 +31,18 @@ const Profile = ({ currentUser, refreshCurrentUser }) => {
       ) : null}
       <nav>
         <ul>
-          <li>Tweets</li>
-          <li>Tweets & replies</li>
-          <li>Media</li>
-          <li>Likes</li>
+          <li>
+            <span>Tweets</span>
+          </li>
+          <li>
+            <span>Tweets & replies</span>
+          </li>
+          <li>
+            <span>Media</span>
+          </li>
+          <li>
+            <span>Likes</span>
+          </li>
         </ul>
       </nav>
     </div>
