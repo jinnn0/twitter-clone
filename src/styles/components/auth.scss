@@ -1,67 +1,108 @@
-.auth-form {
-  margin-bottom: 60px;
-
-  form {
-    display: flex;
-    flex-direction: column;
-    flex: 1;
-
-    input:nth-child(1) {
-      margin-bottom: 7px;
-    }
-  }
-
-  .auth-switch {
-    background-color: white;
-    color: var(--primary);
-    border: 1px solid var(--primary);
-    display: block;
-    text-align: center;
-  }
-}
-
-.auth-provider {
+.auth {
+  height: 100vh;
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
-  height: 100px;
 
-  @media (min-width: 400px) {
+  @media (min-width: 750px) {
     flex-direction: row;
-    height: auto;
   }
 
-  .provider_btn {
+  &__left,
+  &__right {
+    flex: 1;
     display: flex;
+    align-items: center;
     justify-content: center;
+    padding: 1rem;
+  }
 
-    @media (min-width: 400px) {
-      flex: 0.9;
+  &__left {
+    min-width: 375px;
+    min-height: 350px;
+    background-color: var(--primary);
+    color: white;
+
+    p {
+      font-size: 1.2rem;
+      margin-bottom: 1rem;
+    }
+  }
+
+  &__right {
+    flex: 1;
+    flex-direction: column;
+
+    .auth-form,
+    .auth-provider {
+      width: 452px;
     }
 
-    .social-icon {
-      margin-right: 0.3rem;
-    }
+    .auth-form {
+      margin-bottom: 60px;
 
-    &.google {
-      margin-right: 5px;
+      form {
+        display: flex;
+        flex-direction: column;
+        flex: 1;
 
-      &:hover {
-        background-color: rgb(244, 244, 244);
+        input:nth-child(1) {
+          margin-bottom: 7px;
+        }
+      }
+
+      .auth-switch {
+        background-color: white;
+        color: var(--primary);
+        border: 1px solid var(--primary);
+        display: block;
+        text-align: center;
       }
     }
 
-    &.facebook {
-      background-color: rgb(56, 82, 152);
-      border: none;
-      color: white;
+    .auth-provider {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      height: 100px;
 
-      &:hover {
-        background-color: rgba(56, 82, 152, 0.863);
+      @media (min-width: 400px) {
+        flex-direction: row;
+        height: auto;
       }
 
-      .social-icon {
-        color: white;
+      .provider_btn {
+        display: flex;
+        justify-content: center;
+
+        @media (min-width: 400px) {
+          flex: 0.9;
+        }
+
+        .social-icon {
+          margin-right: 0.3rem;
+        }
+
+        &.google {
+          margin-right: 5px;
+
+          &:hover {
+            background-color: rgb(244, 244, 244);
+          }
+        }
+
+        &.facebook {
+          background-color: rgb(56, 82, 152);
+          border: none;
+          color: white;
+
+          &:hover {
+            background-color: rgba(56, 82, 152, 0.863);
+          }
+
+          .social-icon {
+            color: white;
+          }
+        }
       }
     }
   }

@@ -8,10 +8,10 @@ import SideBar from './SideBar';
 const Router = ({ isLoggedIn, currentUser, refreshCurrentUser }) => {
   return (
     <HashRouter>
-      <SideBar />
       <Switch>
         {isLoggedIn ? (
           <>
+            <SideBar />
             <Route exact path="/" component={() => <Home currentUser={currentUser} />} />
             <Route
               exact

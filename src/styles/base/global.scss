@@ -17,14 +17,12 @@ body {
 
 .App {
   display: flex;
-  width: 100%;
-  max-width: 1000px;
-  min-height: 100vh;
   margin: 0 auto;
   border-radius: 10px;
   background-color: white;
   position: relative;
 
+  .auth,
   .home,
   .profile {
     flex: 3;
