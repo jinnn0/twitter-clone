@@ -9,7 +9,7 @@
 
   .sidebar {
     width: 88px;
-    height: 80%;
+    height: 100%;
     position: fixed;
     top: 0;
 
@@ -18,24 +18,44 @@
     }
 
     ul {
-      padding: 1rem 1rem;
+      height: 100%;
+      padding: 1rem;
+      position: relative;
 
-      @media (min-width: 750px) {
-        padding: 1rem 2rem;
+      li,
+      a {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        @media (min-width: 750px) {
+          justify-content: stretch;
+        }
       }
 
       li {
-        display: flex;
-        align-items: center;
-        margin-bottom: 0.8rem;
+        width: 100%;
+        margin-bottom: 1rem;
         border-radius: 20px;
-        padding: 0.5rem 0.7rem;
+        padding: 0.5rem 0.5rem;
         cursor: pointer;
 
         @media (min-width: 750px) {
-          padding: 1rem 2rem;
           border-radius: 40px;
           font-weight: bold;
+        }
+
+        &:last-of-type {
+          width: calc(100% - 2rem);
+          position: absolute;
+          bottom: 10px;
+          display: flex;
+          justify-content: space-around;
+
+          span {
+            display: flex;
+            align-items: center;
+          }
         }
 
         .twitter-icon {
@@ -73,6 +93,21 @@
           svg {
             color: var(--primary);
           }
+        }
+      }
+
+      .logout {
+        position: absolute;
+        bottom: 70px;
+        right: 15px;
+        width: 230px;
+        height: 50px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        &:hover {
+          background-color: rgba(255, 0, 0, 0.767);
         }
       }
     }

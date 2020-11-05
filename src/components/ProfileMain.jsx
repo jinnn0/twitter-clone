@@ -1,24 +1,13 @@
-import React, { useState, useRef } from 'react';
-import useOnClickOutside from '../hooks/useOnClickOutside';
+import React, { useRef } from 'react';
 import { GoLocation } from 'react-icons/go';
 import { BsCalendar } from 'react-icons/bs';
 
-const ProfileMain = ({ currentUser, handleLogOut, setIsEditBtnClick }) => {
-  const [isMoreBtnClicked, setIsMoreBtnClicked] = useState(false);
+const ProfileMain = ({ currentUser, setIsEditBtnClick }) => {
   const editBtnRef = useRef();
-  const moreBtnRef = useRef();
-
-  const openLogOutBtn = () => {
-    setIsMoreBtnClicked(true);
-  };
 
   const openProfileEditModal = () => {
     setIsEditBtnClick(true);
   };
-
-  useOnClickOutside(moreBtnRef, () => {
-    setIsMoreBtnClicked(false);
-  });
 
   return (
     <div className="profile-main">
@@ -38,14 +27,6 @@ const ProfileMain = ({ currentUser, handleLogOut, setIsEditBtnClick }) => {
         <button ref={editBtnRef} className="btn btn-md btn-secondary edit-btn" onClick={openProfileEditModal}>
           Edit profile
         </button>
-        <div className="more-btn" onClick={openLogOutBtn}>
-          :
-        </div>
-        {isMoreBtnClicked ? (
-          <div ref={moreBtnRef} className="logout" onClick={handleLogOut}>
-            Log out
-          </div>
-        ) : null}
       </div>
 
       <div className="profile-main__row-3">
