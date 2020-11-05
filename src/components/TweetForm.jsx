@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import useFirestorage from '../hooks/useFirestorage';
-// import { firebaseStorage } from '../firebase';
+import { firebaseStorage } from '../firebase';
 import { HiUserCircle } from 'react-icons/hi';
 import { BiImage } from 'react-icons/bi';
 import { MdGif } from 'react-icons/md';
@@ -31,11 +31,11 @@ const TweetForm = ({ currentUser, addTweet }) => {
     }
   };
 
-  // const handleCloseImg = () => {
-  //   setFile(null);
-  //   setUrl('');
-  //   firebaseStorage.refFromURL(url).delete();
-  // };
+  const handleCloseImg = () => {
+    setFile(null);
+    setUrl('');
+    firebaseStorage.refFromURL(url).delete();
+  };
 
   return (
     <div className="tweet-form-container">
@@ -46,7 +46,7 @@ const TweetForm = ({ currentUser, addTweet }) => {
         </div>
       </div>
 
-      <form onSubmit={handleSubmit} className="tweet-form col-2">
+      <form onSubmit={handleSubmit} className="col-2">
         <div className="row-1">
           <input
             type="text"
@@ -57,7 +57,18 @@ const TweetForm = ({ currentUser, addTweet }) => {
           />
         </div>
 
-        <div className="row-2">
+        {file && (
+          <div className="row-2">
+            <div className="photo-snippet-container">
+              <img src={url} alt="img" />
+              <button className="btn btn-sm btn-primary clear-btn" onClick={handleCloseImg}>
+                x
+              </button>
+            </div>
+          </div>
+        )}
+
+        <div className="row-3">
           <label htmlFor="add-photo" className="add-photo-label">
             <BiImage className="add-photo-icon" />
             <input
@@ -77,13 +88,6 @@ const TweetForm = ({ currentUser, addTweet }) => {
           </button>
         </div>
       </form>
-
-      {/* {file && (
-        <div className="photo-snippet-container">
-          <img src={url} alt="img" />
-          <button onClick={handleCloseImg}>Clear</button>
-        </div>
-      )} */}
     </div>
   );
 };
