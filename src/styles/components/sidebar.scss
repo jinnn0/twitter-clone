@@ -1,66 +1,78 @@
-.sidebar {
-  min-height: 100vh;
+.sidebar-container {
+  width: 88px;
+  display: flex;
+  justify-content: flex-end;
 
   @media (min-width: 750px) {
-    flex: 1;
+    width: 275px;
   }
 
-  ul {
-    width: 100%;
-    padding: 1rem 1rem;
+  .sidebar {
+    width: 88px;
+    height: 80%;
+    position: fixed;
+    top: 0;
 
     @media (min-width: 750px) {
-      padding: 1rem 2rem;
+      width: 275px;
     }
 
-    li {
-      display: flex;
-      align-items: center;
-      margin-bottom: 1rem;
-      border-radius: 20px;
-      padding: 0.5rem 0.7rem;
-      cursor: pointer;
+    ul {
+      padding: 1rem 1rem;
 
       @media (min-width: 750px) {
         padding: 1rem 2rem;
-        border-radius: 40px;
-        font-weight: bold;
       }
 
-      .twitter-icon {
+      li {
         display: flex;
         align-items: center;
-        font-weight: bold;
-        color: var(--primary);
-      }
-
-      a {
-        width: 100%;
-      }
-
-      svg {
-        font-size: 1.3rem;
-        color: rgba(0, 0, 0, 0.795);
+        margin-bottom: 0.8rem;
+        border-radius: 20px;
+        padding: 0.5rem 0.7rem;
+        cursor: pointer;
 
         @media (min-width: 750px) {
-          margin-right: 1rem;
+          padding: 1rem 2rem;
+          border-radius: 40px;
+          font-weight: bold;
         }
-      }
 
-      span {
-        display: none;
-
-        @media (min-width: 750px) {
-          display: inline-block;
+        .twitter-icon {
+          display: flex;
+          align-items: center;
+          font-weight: bold;
+          color: var(--primary);
         }
-      }
 
-      &:hover {
-        background-color: rgb(233, 246, 253);
-        color: var(--primary);
+        a {
+          width: 100%;
+        }
 
         svg {
+          font-size: 1.3rem;
+          color: rgba(0, 0, 0, 0.795);
+
+          @media (min-width: 750px) {
+            margin-right: 1rem;
+          }
+        }
+
+        span {
+          display: none;
+
+          @media (min-width: 750px) {
+            display: inline-block;
+          }
+        }
+
+        &:hover {
+          background-color: rgb(233, 246, 253);
           color: var(--primary);
+
+          svg {
+            color: var(--primary);
+          }
         }
       }
     }
