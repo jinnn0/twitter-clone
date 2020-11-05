@@ -72,7 +72,7 @@ const TweetForm = ({ currentUser, addTweet }) => {
           <RiBarChartHorizontalFill />
           <GrEmoji />
           <GrSchedulePlay />
-          <button type="submit" className="input-submit">
+          <button type="submit" className="btn btn-md btn-primary tweet-btn">
             Tweet
           </button>
         </div>

@@ -43,19 +43,28 @@
       form {
         display: flex;
         flex-direction: column;
-        flex: 1;
 
-        input:nth-child(1) {
-          margin-bottom: 7px;
+        input {
+          border-radius: 30px;
+          background-color: transparent;
+          outline: none;
+          border: none;
+          padding: 15px;
+          border: 1px solid rgba(0, 0, 0, 0.493);
+
+          &:nth-child(1) {
+            margin-bottom: 7px;
+          }
         }
-      }
 
-      .auth-switch {
-        background-color: white;
-        color: var(--primary);
-        border: 1px solid var(--primary);
-        display: block;
-        text-align: center;
+        button {
+          width: 100%;
+          margin-bottom: 2rem;
+
+          &:nth-of-type(1) {
+            margin-top: 1rem;
+          }
+        }
       }
     }
 
@@ -63,6 +72,7 @@
       display: flex;
       flex-direction: column;
       justify-content: space-between;
+      align-items: center;
       height: 100px;
 
       @media (min-width: 400px) {
@@ -70,38 +80,41 @@
         height: auto;
       }
 
-      .provider_btn {
+      .google,
+      .facebook {
+        width: 100%;
         display: flex;
+        align-items: center;
         justify-content: center;
 
         @media (min-width: 400px) {
-          flex: 0.9;
+          flex: 0.8;
         }
 
         .social-icon {
           margin-right: 0.3rem;
         }
+      }
 
-        &.google {
-          margin-right: 5px;
+      .google {
+        margin-right: 5px;
 
-          &:hover {
-            background-color: rgb(244, 244, 244);
-          }
+        &:hover {
+          background-color: rgb(244, 244, 244);
+        }
+      }
+
+      .facebook {
+        background-color: rgb(56, 82, 152);
+        border: none;
+        color: white;
+
+        &:hover {
+          background-color: rgba(56, 82, 152, 0.863);
         }
 
-        &.facebook {
-          background-color: rgb(56, 82, 152);
-          border: none;
+        .social-icon {
           color: white;
-
-          &:hover {
-            background-color: rgba(56, 82, 152, 0.863);
-          }
-
-          .social-icon {
-            color: white;
-          }
         }
       }
     }

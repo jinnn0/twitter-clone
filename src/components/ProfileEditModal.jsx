@@ -27,7 +27,7 @@ const ProfileEditModal = ({ currentUser, refreshCurrentUser, setIsEditBtnClick }
         <div className="edit-modal-form__row-1">
           <AiIcons.AiOutlineClose className="close" />
           <h3>Edit profile</h3>
-          <button type="submit" className="save" onClick={handleSubmit}>
+          <button type="submit" className="btn btn-sm btn-primary save-btn" onClick={handleSubmit}>
             Save
           </button>
         </div>

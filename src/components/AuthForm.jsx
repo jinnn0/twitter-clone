@@ -49,17 +49,17 @@ const AuthForm = () => {
           value={password}
           onChange={handleChange}
         />
-        <button type="submit" className="input-submit">
-          {newAccount ? 'Sign Up' : 'Sign In'}{' '}
+
+        <button type="submit" className="btn btn-lg btn-primary ">
+          {newAccount ? 'Sign Up' : 'Sign In'}
         </button>
         {error}
 
-        <button onClick={toggleAccount} className="auth-switch">
+        <button onClick={toggleAccount} className="btn btn-lg btn-secondary">
           {newAccount ? 'Log In' : 'Sign Up'}
         </button>
       </form>
     </div>
   );
 };
-
 export default AuthForm;

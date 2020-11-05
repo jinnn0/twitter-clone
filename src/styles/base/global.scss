@@ -28,7 +28,8 @@ body {
   .auth,
   .home,
   .profile {
-    flex: 3;
+    flex: 1;
+    min-width: 520px;
   }
 
   .init-message {
@@ -39,27 +40,49 @@ body {
   }
 }
 
-input,
-button {
-  padding: 15px;
-  border-radius: 30px;
-  border: 1px solid rgba(0, 0, 0, 0.308);
-  background-color: white;
+input {
+  border: none;
   outline: none;
+  background-color: transparent;
 }
 
-.input-submit {
+.btn {
+  border-radius: 30px;
+  background-color: transparent;
+  outline: none;
+  border: none;
+  cursor: pointer;
+}
+
+.btn-sm {
+  width: 70px;
+  padding: 10px 0px;
+  font-size: 0.65rem;
+}
+
+.btn-md {
+  width: 95px;
+  padding: 13px;
+  font-size: 0.8rem;
+}
+
+.btn-lg {
+  width: 150px;
+  padding: 15px;
+}
+
+.btn-primary {
   background-color: var(--primary);
   color: white;
-  font-weight: 600;
-  margin-top: 1.7rem;
-  margin-bottom: 3.2rem;
-  border: none;
 }
 
-button,
-.input-submit {
-  cursor: pointer;
+.btn-secondary {
+  border: 1px solid var(--primary);
+  color: var(--primary);
+}
+
+.btn-outline {
+  border: 1px solid rgba(0, 0, 0, 0.493);
 }
 
 ul {
@@ -70,15 +93,3 @@ a {
   color: black;
   text-decoration: none;
 }
-
-// .sidebar {
-//   background-color: rgb(190, 255, 249);
-// }
-
-// .home {
-//   background-color: rgb(215, 237, 255);
-// }
-
-// .profile {
-//   background-color: rgb(255, 224, 255);
-// }

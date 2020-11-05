@@ -23,11 +23,11 @@ const AuthProvider = () => {
 
   return (
     <div className="auth-provider">
-      <button className="provider_btn google" name="google" onClick={handleSocialClick}>
+      <button className="btn btn-lg btn-outline google" name="google" onClick={handleSocialClick}>
         <FcGoogle className="social-icon" />
         Continue with Google
       </button>
-      <button className="provider_btn facebook" name="facebook" onClick={handleSocialClick}>
+      <button className="btn btn-lg  facebook" name="facebook" onClick={handleSocialClick}>
         <FaFacebook className="social-icon" />
         Continue with Facebook
       </button>

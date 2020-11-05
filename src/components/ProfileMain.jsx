@@ -35,7 +35,7 @@ const ProfileMain = ({ currentUser, handleLogOut, setIsEditBtnClick }) => {
             <div className="default-img"></div>
           )}
         </div>
-        <button ref={editBtnRef} className="edit-btn" onClick={openProfileEditModal}>
+        <button ref={editBtnRef} className="btn btn-md btn-secondary edit-btn" onClick={openProfileEditModal}>
           Edit profile
         </button>
         <div className="more-btn" onClick={openLogOutBtn}>
