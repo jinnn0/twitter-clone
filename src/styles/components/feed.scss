@@ -1,13 +1,12 @@
-.home {
+.feed {
   border-left: 1px solid var(--border);
   border-right: 1px solid var(--border);
 
-  .header {
+  .feed__header {
     background-color: white;
     height: 60px;
-    line-height: 60px;
     font-weight: bold;
-    padding: 0 1rem;
+    padding: 1rem;
     border-bottom: 1px solid var(--border);
   }
 }

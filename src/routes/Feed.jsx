@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import EditModal from '../components/EditModal';
 import Tweet from '../components/Tweet';
-import TweetForm from '../components/TweetForm';
+import NewTweet from '../components/NewTweet';
 import { firebaseStore, firebaseStorage } from '../firebase';
 import useFirestore from '../hooks/useFirestore';
 
@@ -39,12 +39,12 @@ const Home = ({ currentUser }) => {
   };
 
   return (
-    <div className="home">
-      <div className="header">
+    <div className="feed">
+      <div className="feed__header">
         <h3>Home</h3>
       </div>
-      <TweetForm currentUser={currentUser} addTweet={addTweet} />
-      <ul className="tweets">
+      <NewTweet currentUser={currentUser} addTweet={addTweet} />
+      <ul>
         {tweets.map((tweet) => (
           <Tweet
             key={tweet.id}

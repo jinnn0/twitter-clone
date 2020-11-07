@@ -10,13 +10,13 @@ const ProfileMain = ({ currentUser, setIsEditBtnClick }) => {
   };
 
   return (
-    <div className="profile-main">
-      <div className="profile-main__row-1">
+    <div className="profileHeader">
+      <div className="profileHeader__bg">
         {/* <img src="" alt="background" /> */}
         <div className="default-bg"></div>
       </div>
 
-      <div className="profile-main__row-2">
+      <div className="profileHeader__edit-profile">
         <div className="profile-img">
           {currentUser.profilePhoto ? (
             <img src={currentUser.profilePhoto} alt="profile" />
@@ -29,16 +29,33 @@ const ProfileMain = ({ currentUser, setIsEditBtnClick }) => {
         </button>
       </div>
 
-      <div className="profile-main__row-3">
+      <div className="profileHeader__username">
         {currentUser.displayName ? currentUser.displayName : currentUser.email}
       </div>
 
-      <div className="profile-main__row-4">art, visuals and technology</div>
+      <div className=" profileHeader__bio">art, visuals and technology</div>
 
-      <div className="profile-main__row-5">
-        <GoLocation className="icon " /> Dublin
-        <BsCalendar className="icon calendar" /> Joined August 2018
+      <div className="profileHeader__other-info">
+        <GoLocation /> Dublin
+        <BsCalendar className="calendar" /> Joined August 2018
       </div>
+
+      <nav className="profileHeader__nav">
+        <ul>
+          <li>
+            <span>Tweets</span>
+          </li>
+          <li>
+            <span>Tweets & replies</span>
+          </li>
+          <li>
+            <span>Media</span>
+          </li>
+          <li>
+            <span>Likes</span>
+          </li>
+        </ul>
+      </nav>
     </div>
   );
 };

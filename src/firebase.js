@@ -13,7 +13,9 @@ const firebaseConfig = {
   appId: process.env.REACT_APP_APP_ID
 };
 
-firebase.initializeApp(firebaseConfig);
+if (!firebase.apps.length) {
+  firebase.initializeApp(firebaseConfig);
+}
 
 const firebaseAuth = firebase.auth();
 const firebaseStore = firebase.firestore();

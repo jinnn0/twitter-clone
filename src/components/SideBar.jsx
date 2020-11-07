@@ -31,65 +31,63 @@ const SideBar = () => {
   });
 
   return (
-    <div className="sidebar-container">
-      <nav className="sidebar">
-        <ul>
-          <li>
-            <Link to="/">
-              <FaIcons.FaTwitter className="twitter-icon" />
-            </Link>
-          </li>
-          <li>
-            <RiIcons.RiHome8Line />
-            <span> Home </span>
-          </li>
-          <li>
-            <FiHash />
-            <span> Explore </span>
-          </li>
-          <li>
-            <IoMdNotificationsOutline />
-            <span> Notification</span>
-          </li>
-          <li>
-            <BiIcons.BiEnvelope />
-            <span> Message</span>
-          </li>
-          <li>
-            <BiIcons.BiBookmark />
-            <span> Bookmarks </span>
-          </li>
-          <li>
-            <RiIcons.RiFileList2Line />
-            <span> Lists </span>
-          </li>
-          <li>
-            <Link to="/profile">
-              <FaIcons.FaUser />
-              <span>Profile</span>
-            </Link>
-          </li>
-          <li>
-            <CgMoreO />
-            <span> More</span>
-          </li>
+    <nav className="sidebar">
+      <ul>
+        <li>
+          <Link to="/">
+            <FaIcons.FaTwitter className="twitter-icon" />
+          </Link>
+        </li>
+        <li>
+          <RiIcons.RiHome8Line />
+          <span> Home </span>
+        </li>
+        <li>
+          <FiHash />
+          <span> Explore </span>
+        </li>
+        <li>
+          <IoMdNotificationsOutline />
+          <span> Notification</span>
+        </li>
+        <li>
+          <BiIcons.BiEnvelope />
+          <span> Message</span>
+        </li>
+        <li>
+          <BiIcons.BiBookmark />
+          <span> Bookmarks </span>
+        </li>
+        <li>
+          <RiIcons.RiFileList2Line />
+          <span> Lists </span>
+        </li>
+        <li>
+          <Link to="/profile">
+            <FaIcons.FaUser />
+            <span>Profile</span>
+          </Link>
+        </li>
+        <li>
+          <CgMoreO />
+          <span> More</span>
+        </li>
 
-          <li ref={moreBtnRef} onClick={openLogOutBtn}>
-            <HiUserCircle />
-            <span> Jinyoung Jeong</span>
-            <span>
-              <MdKeyboardArrowDown />
-            </span>
-          </li>
+        <li ref={moreBtnRef} onClick={openLogOutBtn}>
+          <HiUserCircle />
+          <span> Jinyoung Jeong</span>
+          <span>
+            <MdKeyboardArrowDown />
+          </span>
+        </li>
 
-          {isClicked ? (
-            <button ref={moreBtnRef} className="btn btn-md btn-danger logout" onClick={handleLogOut}>
-              Log out
-            </button>
-          ) : null}
-        </ul>
-      </nav>
-    </div>
+        {isClicked ? (
+          <button ref={moreBtnRef} className="btn btn-md btn-danger logout" onClick={handleLogOut}>
+            Log out
+          </button>
+        ) : null}
+      </ul>
+    </nav>
   );
 };
 

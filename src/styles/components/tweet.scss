@@ -1,59 +1,70 @@
-.tweets {
-  .tweet {
-    margin-bottom: 0.8rem;
-    min-height: 2rem;
-    display: flex;
-    border-radius: 10px;
-    border: 1px solid var(--border);
-    padding: 0.7rem;
-    flex-direction: row;
+.tweet {
+  min-height: 2rem;
+  display: flex;
+  flex-direction: row;
+  border-bottom: 1px solid var(--border);
+  padding: 1.5rem 1rem;
 
-    .col-1 {
-      width: 40px;
-      height: 40px;
+  .col-1 {
+    width: 40px;
+    height: 40px;
+
+    .avatar {
+      color: var(--primary);
+      font-size: 2.2rem;
+    }
+  }
+
+  .col-2 {
+    flex: 1;
+
+    .tweet__header,
+    .tweet-text,
+    .tweet-img {
+      margin-bottom: 0.3rem;
     }
 
-    .col-2 {
-      flex: 1;
+    .tweet__header {
+      position: relative;
 
-      .user-info,
-      .tweet-text,
-      .tweet-img {
-        margin-bottom: 0.3rem;
-      }
+      .icons {
+        display: inline-block;
+        position: absolute;
+        right: 0;
 
-      .user-info {
-        position: relative;
+        .icon {
+          cursor: pointer;
+          color: var(--primary);
+        }
 
-        .icons {
-          display: inline-block;
-          position: absolute;
-          right: 0;
-
-          .icon {
-            cursor: pointer;
-            color: var(--primary);
-          }
-
-          .delete-icon {
-            margin: 0 0.5rem 0 1rem;
-          }
+        .delete-icon {
+          margin: 0 0.5rem 0 1rem;
         }
       }
+    }
 
-      .tweet-text {
-        margin-bottom: 1rem;
+    .tweet__text {
+      margin-bottom: 1rem;
+    }
+
+    .tweet__file {
+      img {
+        width: 100%;
+        max-height: 600px;
+        margin: 0 auto 2rem auto;
+        border-radius: 20px;
+        object-fit: cover;
       }
+    }
 
-      .tweet-img {
-        img {
-          display: block;
-          width: 100%;
-          max-height: 450px;
-          margin: 0 auto 2rem auto;
-          border-radius: 20px;
-          object-fit: cover;
-        }
+    .tweet__footer {
+      display: flex;
+      justify-content: space-between;
+      padding: 0.5rem 3rem 0.5rem 0;
+      color: rgba(0, 0, 0, 0.4);
+
+      svg {
+        cursor: pointer;
       }
     }
   }

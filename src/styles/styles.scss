@@ -1,8 +1,9 @@
-// @import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
 @import './base//global.scss';
-@import './components//sidebar.scss';
-@import './components//auth.scss';
-@import './components//home-header.scss';
-@import './components/tweet-form.scss';
+@import './components/sidebar.scss';
+@import './components/auth.scss';
+@import './components/feed.scss';
+@import './components/newTweet.scss';
 @import './components/tweet.scss';
 @import './components/profile.scss';
+@import './components/profileEdit.scss';
+@import './components/widget.scss';

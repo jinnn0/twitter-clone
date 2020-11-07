@@ -8,7 +8,7 @@ import { RiBarChartHorizontalFill } from 'react-icons/ri';
 import { GrEmoji } from 'react-icons/gr';
 import { GrSchedulePlay } from 'react-icons/gr';
 
-const TweetForm = ({ currentUser, addTweet }) => {
+const NewTweet = ({ currentUser, addTweet }) => {
   const [text, setTweet] = useState('');
   const [file, setFile] = useState(null);
   const [url, setUrl] = useFirestorage(currentUser, file);
@@ -38,46 +38,34 @@ const TweetForm = ({ currentUser, addTweet }) => {
   };
 
   return (
-    <div className="tweet-form-container">
+    <div className="newTweet">
       <div className="col-1">
-        <div className="profile-img">
-          <HiUserCircle />
-          {/* <img src="" alt="user-img" className="user-img" /> */}
-        </div>
+        <HiUserCircle className="avatar" />
+        {/* <img src="" alt="user-img" className="user-img" /> */}
       </div>
 
       <form onSubmit={handleSubmit} className="col-2">
-        <div className="row-1">
-          <input
-            type="text"
-            className="input-text"
-            value={text}
-            onChange={handleInput}
-            placeholder="What's happening ?"
-          />
-        </div>
+        <input
+          type="text"
+          className="newTweet__input"
+          value={text}
+          onChange={handleInput}
+          placeholder="What's happening ?"
+        />
 
         {file && (
-          <div className="row-2">
-            <div className="photo-snippet-container">
-              <img src={url} alt="img" />
-              <button className="btn btn-sm btn-primary clear-btn" onClick={handleCloseImg}>
-                x
-              </button>
-            </div>
+          <div className="newTweet__file-preview">
+            <img src={url} alt="img" />
+            <button className="btn btn-sm btn-primary clear-btn" onClick={handleCloseImg}>
+              x
+            </button>
           </div>
         )}
 
-        <div className="row-3">
-          <label htmlFor="add-photo" className="add-photo-label">
-            <BiImage className="add-photo-icon" />
-            <input
-              id="add-photo"
-              className="add-photo-input"
-              type="file"
-              accept="image/*"
-              onChange={handleFileUpload}
-            />
+        <div className="newTweet__footer">
+          <label htmlFor="file-input">
+            <BiImage />
+            <input id="file-input" type="file" accept="image/*" onChange={handleFileUpload} />
           </label>
           <MdGif />
           <RiBarChartHorizontalFill />
@@ -92,4 +80,4 @@ const TweetForm = ({ currentUser, addTweet }) => {
   );
 };
 
-export default TweetForm;
+export default NewTweet;

@@ -1,114 +1,101 @@
-.sidebar-container {
-  min-width: 88px;
-  display: flex;
-  justify-content: flex-end;
+.sidebar {
+  padding-top: 1rem;
 
   @media (min-width: 750px) {
     width: 275px;
   }
 
-  .sidebar {
-    width: 88px;
+  ul {
     height: 100%;
-    position: fixed;
-    top: 0;
+    padding: 1rem;
+    padding-top: 0;
+    position: relative;
 
-    @media (min-width: 750px) {
-      width: 275px;
+    li,
+    a {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      @media (min-width: 750px) {
+        justify-content: stretch;
+      }
     }
 
-    ul {
-      height: 100%;
-      padding: 1rem;
-      position: relative;
+    li {
+      width: 100%;
+      margin-bottom: 1rem;
+      border-radius: 30px;
+      padding: 0.8rem;
+      font-weight: bold;
+      cursor: pointer;
 
-      li,
-      a {
+      &:first-of-type {
+        padding-top: 0;
+      }
+
+      &:last-of-type {
+        width: calc(100% - 2rem);
+        position: absolute;
+        bottom: 10px;
         display: flex;
-        align-items: center;
-        justify-content: center;
+        justify-content: space-around;
 
-        @media (min-width: 750px) {
-          justify-content: stretch;
+        span:nth-of-type(2) {
+          padding-top: 4px;
         }
       }
 
-      li {
+      .twitter-icon {
+        display: flex;
+        align-items: center;
+        font-weight: bold;
+        color: var(--primary);
+      }
+
+      a {
         width: 100%;
-        margin-bottom: 1rem;
-        border-radius: 20px;
-        padding: 0.5rem 0.5rem;
-        cursor: pointer;
+      }
+
+      svg {
+        font-size: 1.3rem;
+        color: rgba(0, 0, 0, 0.795);
 
         @media (min-width: 750px) {
-          border-radius: 40px;
-          font-weight: bold;
+          margin-right: 1rem;
         }
+      }
 
-        &:last-of-type {
-          width: calc(100% - 2rem);
-          position: absolute;
-          bottom: 10px;
-          display: flex;
-          justify-content: space-around;
+      span {
+        display: none;
 
-          span {
-            display: flex;
-            align-items: center;
-          }
+        @media (min-width: 750px) {
+          display: inline-block;
         }
+      }
 
-        .twitter-icon {
-          display: flex;
-          align-items: center;
-          font-weight: bold;
-          color: var(--primary);
-        }
-
-        a {
-          width: 100%;
-        }
+      &:hover {
+        background-color: rgb(233, 246, 253);
+        color: var(--primary);
 
         svg {
-          font-size: 1.3rem;
-          color: rgba(0, 0, 0, 0.795);
-
-          @media (min-width: 750px) {
-            margin-right: 1rem;
-          }
-        }
-
-        span {
-          display: none;
-
-          @media (min-width: 750px) {
-            display: inline-block;
-          }
-        }
-
-        &:hover {
-          background-color: rgb(233, 246, 253);
           color: var(--primary);
-
-          svg {
-            color: var(--primary);
-          }
         }
       }
+    }
 
-      .logout {
-        position: absolute;
-        bottom: 70px;
-        right: 15px;
-        width: 230px;
-        height: 50px;
-        display: flex;
-        align-items: center;
-        justify-content: center;
+    .logout {
+      position: absolute;
+      bottom: 90px;
+      left: 1rem;
+      width: 230px;
+      height: 50px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
 
-        &:hover {
-          background-color: rgba(255, 0, 0, 0.767);
-        }
+      &:hover {
+        background-color: rgba(255, 0, 0, 0.767);
       }
     }
   }

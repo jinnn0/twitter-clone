@@ -17,7 +17,9 @@ body {
 
 .App {
   .main {
-    max-width: 1000px;
+    max-width: 1300px;
+    min-height: 700px;
+    height: 100vh;
     display: flex;
     margin: 0 auto;
     border-radius: 10px;
@@ -25,11 +27,27 @@ body {
     position: relative;
   }
 
-  .auth,
-  .home,
+  .feed,
   .profile {
     flex: 1;
     min-width: 520px;
+  }
+
+  .feed,
+  .profile,
+  .widget {
+    overflow-y: scroll;
+
+    /* Hide scrollbar for Chrome, Safari and Opera */
+    &::-webkit-scrollbar {
+      display: none;
+    }
+
+    /* Hide scrollbar for IE, Edge and Firefox */
+    & {
+      -ms-overflow-style: none; /* IE and Edge */
+      scrollbar-width: none; /* Firefox */
+    }
   }
 
   .init-message {
