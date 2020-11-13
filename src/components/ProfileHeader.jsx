@@ -18,8 +18,8 @@ const ProfileMain = ({ currentUser, setIsEditBtnClick }) => {
 
       <div className="profileHeader__edit-profile">
         <div className="profile-img">
-          {currentUser.profilePhoto ? (
-            <img src={currentUser.profilePhoto} alt="profile" />
+          {currentUser.avatar ? (
+            <img src={currentUser.avatar} alt="profile" />
           ) : (
             <div className="default-img"></div>
           )}
@@ -30,10 +30,10 @@ const ProfileMain = ({ currentUser, setIsEditBtnClick }) => {
       </div>
 
       <div className="profileHeader__username">
-        {currentUser.displayName ? currentUser.displayName : currentUser.email}
+        {currentUser.userName ? currentUser.userName : currentUser.email}
       </div>
 
-      <div className=" profileHeader__bio">art, visuals and technology</div>
+      <div className=" profileHeader__bio">{currentUser.bio ? currentUser.bio : null} no bio</div>
 
       <div className="profileHeader__other-info">
         <GoLocation /> Dublin

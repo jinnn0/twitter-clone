@@ -9,13 +9,17 @@ const Tweet = ({ tweet, isCreator, deleteTweet, openEditModal }) => {
   return (
     <li className="tweet">
       <div className="col-1">
-        <HiUserCircle className="avatar" />
-        {/* <img src="" alt="user-img" className="user-img" /> */}
+        {tweet.user.avatar ? (
+          <img src={tweet.user.avatar} alt="avatar" className="avatar" />
+        ) : (
+          <HiUserCircle className="avatar" />
+        )}
       </div>
 
       <div className="col-2">
         <div className="tweet__header">
-          Lex Fridman
+          <span>{tweet.user.userName}</span>
+          <span>{tweet.user.email ? `@${tweet.user.email}` : null}</span>
           {isCreator && (
             <div className="icons">
               <RiDeleteBinLine
@@ -28,7 +32,7 @@ const Tweet = ({ tweet, isCreator, deleteTweet, openEditModal }) => {
         </div>
 
         <div className="tweet__text">{tweet.text}</div>
-        <div className="tweet__file">{tweet.url && <img src={tweet.url} alt="img" />}</div>
+        <div className="tweet__file">{tweet.imgUrl && <img src={tweet.imgUrl} alt="img" />}</div>
         <div className="tweet__footer">
           <FaRegComment />
           <AiIcons.AiOutlineRetweet />

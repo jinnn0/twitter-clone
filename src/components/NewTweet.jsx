@@ -11,7 +11,7 @@ import { GrSchedulePlay } from 'react-icons/gr';
 const NewTweet = ({ currentUser, addTweet }) => {
   const [text, setTweet] = useState('');
   const [file, setFile] = useState(null);
-  const [url, setUrl] = useFirestorage(currentUser, file);
+  const [imgUrl, setImgUrl] = useFirestorage(currentUser, file, 'imgUpload');
 
   const handleInput = (e) => {
     setTweet(e.target.value);
@@ -23,25 +23,29 @@ const NewTweet = ({ currentUser, addTweet }) => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    if (text || url) {
-      addTweet(text, url);
+
+    if (text || imgUrl) {
+      addTweet(text, imgUrl);
       setFile(null);
-      setUrl('');
+      setImgUrl('');
       setTweet('');
     }
   };
 
   const handleCloseImg = () => {
     setFile(null);
-    setUrl('');
-    firebaseStorage.refFromURL(url).delete();
+    setImgUrl('');
+    firebaseStorage.refFromURL(imgUrl).delete();
   };
 
   return (
     <div className="newTweet">
       <div className="col-1">
-        <HiUserCircle className="avatar" />
-        {/* <img src="" alt="user-img" className="user-img" /> */}
+        {currentUser.avatar ? (
+          <img src={currentUser.avatar} alt="user-img" className="avatar" />
+        ) : (
+          <HiUserCircle className="avatar" />
+        )}
       </div>
 
       <form onSubmit={handleSubmit} className="col-2">
@@ -55,7 +59,7 @@ const NewTweet = ({ currentUser, addTweet }) => {
 
         {file && (
           <div className="newTweet__file-preview">
-            <img src={url} alt="img" />
+            <img src={imgUrl} alt="img" />
             <button className="btn btn-sm btn-primary clear-btn" onClick={handleCloseImg}>
               x
             </button>

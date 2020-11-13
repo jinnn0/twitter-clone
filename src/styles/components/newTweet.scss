@@ -6,11 +6,20 @@
   padding: 1.5rem 1rem;
 
   .col-1 {
-    width: 60px;
+    width: 80px;
+    margin-right: 0.5rem;
+    display: flex;
+    justify-content: center;
 
     .avatar {
       color: var(--primary);
-      font-size: 3.7rem;
+      font-size: 4.7rem;
+      border-radius: 50%;
+    }
+
+    img.avatar {
+      width: 60px;
+      height: 60px;
     }
   }
 

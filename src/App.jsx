@@ -12,10 +12,10 @@ function App() {
     firebaseAuth.onAuthStateChanged((user) => {
       if (user) {
         setIsLoggedIn(true);
-        setCurrentUser(user);
         setCurrentUser({
-          displayName: user.displayName,
+          userName: user.displayName,
           email: user.email,
+          avatar: user.photoURL,
           uid: user.uid,
           updateProfile: (argg) => user.updateProfile(argg)
         });
@@ -28,7 +28,11 @@ function App() {
   }, []);
 
   const refreshCurrentUser = () => {
-    setCurrentUser(firebaseAuth.currentUser);
+    setCurrentUser({
+      ...currentUser,
+      userName: firebaseAuth.currentUser.displayName,
+      avatar: firebaseAuth.currentUser.photoURL
+    });
   };
 
   return (

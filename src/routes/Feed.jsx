@@ -11,16 +11,26 @@ const Home = ({ currentUser }) => {
   const [targetTweet, setTargetTweet] = useState(null);
   const [updatedTweet, setUpdatedTweet] = useState('');
 
-  const addTweet = (text, url) => {
-    firebaseStore.collection('tweets').add({ text, url, createdAt: Date.now(), creatorId: currentUser.uid });
+  const addTweet = (text, imgUrl) => {
+    firebaseStore.collection('tweets').add({
+      text,
+      imgUrl,
+      user: {
+        avatar: currentUser.avatar,
+        userName: currentUser.userName,
+        email: currentUser.email
+      },
+      createdAt: Date.now(),
+      creatorId: currentUser.uid
+    });
   };
 
-  const deleteTweet = (id, url) => {
+  const deleteTweet = (id, imgUrl) => {
     let isOk = window.confirm('Are you sure you want to delete ?');
     if (isOk) {
       firebaseStore.collection('tweets').doc(id).delete();
-      if (url) {
-        firebaseStorage.refFromURL(url).delete();
+      if (imgUrl) {
+        firebaseStorage.refFromURL(imgUrl).delete();
       }
     } else {
     }
