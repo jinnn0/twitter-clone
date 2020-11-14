@@ -1,5 +1,4 @@
-import React, { useState } from 'react';
-import EditModal from '../components/EditModal';
+import React from 'react';
 import Tweet from '../components/Tweet';
 import NewTweet from '../components/NewTweet';
 import { firebaseStore, firebaseStorage } from '../firebase';
@@ -7,9 +6,6 @@ import useFirestore from '../hooks/useFirestore';
 
 const Home = ({ currentUser }) => {
   const tweets = useFirestore();
-  const [shouldModalOpen, setShouldModalOpen] = useState(false);
-  const [targetTweet, setTargetTweet] = useState(null);
-  const [updatedTweet, setUpdatedTweet] = useState('');
 
   const addTweet = (text, imgUrl) => {
     firebaseStore.collection('tweets').add({
@@ -26,26 +22,10 @@ const Home = ({ currentUser }) => {
   };
 
   const deleteTweet = (id, imgUrl) => {
-    let isOk = window.confirm('Are you sure you want to delete ?');
-    if (isOk) {
-      firebaseStore.collection('tweets').doc(id).delete();
-      if (imgUrl) {
-        firebaseStorage.refFromURL(imgUrl).delete();
-      }
-    } else {
+    firebaseStore.collection('tweets').doc(id).delete();
+    if (imgUrl) {
+      firebaseStorage.refFromURL(imgUrl).delete();
     }
-  };
-
-  const editTweet = (e) => {
-    e.preventDefault();
-    firebaseStore.collection('tweets').doc(targetTweet.id).update({ text: updatedTweet });
-    setShouldModalOpen(false);
-    setUpdatedTweet('');
-  };
-
-  const openEditModal = (tweet) => {
-    setShouldModalOpen(true);
-    setTargetTweet(tweet);
   };
 
   return (
@@ -61,18 +41,9 @@ const Home = ({ currentUser }) => {
             tweet={tweet}
             isCreator={tweet.creatorId === currentUser.uid}
             deleteTweet={deleteTweet}
-            openEditModal={openEditModal}
           />
         ))}
       </ul>
-      {shouldModalOpen && (
-        <EditModal
-          updatedTweet={updatedTweet}
-          editTweet={editTweet}
-          setUpdatedTweet={setUpdatedTweet}
-          setShouldModalOpen={setShouldModalOpen}
-        />
-      )}
     </div>
   );
 };

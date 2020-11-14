@@ -1,11 +1,25 @@
-import React from 'react';
-import { RiDeleteBinLine } from 'react-icons/ri';
+import React, { useRef, useState } from 'react';
 import * as FiIcons from 'react-icons/fi';
 import { HiUserCircle } from 'react-icons/hi';
 import { FaRegComment } from 'react-icons/fa';
 import * as AiIcons from 'react-icons/ai';
 
-const Tweet = ({ tweet, isCreator, deleteTweet, openEditModal }) => {
+import useOnClickOutside from '../hooks/useOnClickOutside';
+
+const Tweet = ({ tweet, isCreator, deleteTweet }) => {
+  const [isMoreClicked, setIsMoreClicked] = useState(false);
+  const [isDeleteClicked, setIsDeleteClicked] = useState(false);
+  const moreMenuRef = useRef();
+  const modalBoxRef = useRef();
+
+  useOnClickOutside(moreMenuRef, () => {
+    setIsMoreClicked(false);
+  });
+
+  useOnClickOutside(modalBoxRef, () => {
+    setIsDeleteClicked(false);
+  });
+
   return (
     <li className="tweet">
       <div className="col-1">
@@ -21,13 +35,48 @@ const Tweet = ({ tweet, isCreator, deleteTweet, openEditModal }) => {
           <span>{tweet.user.userName}</span>
           <span>{tweet.user.email ? `@${tweet.user.email}` : null}</span>
           {isCreator && (
-            <div className="icons">
-              <RiDeleteBinLine
-                className="icon delete-icon"
-                onClick={() => deleteTweet(tweet.id, tweet.url)}
-              />
-              <FiIcons.FiEdit2 className="icon" onClick={() => openEditModal(tweet)} />
-            </div>
+            <>
+              <FiIcons.FiMoreHorizontal className="more" onClick={() => setIsMoreClicked(true)} />
+
+              {isMoreClicked ? (
+                <ul className="moreMenu" ref={moreMenuRef}>
+                  <li
+                    className="delete"
+                    onClick={() => {
+                      setIsDeleteClicked(true);
+                    }}
+                  >
+                    Delete
+                  </li>
+                  <li>Pin to your profile</li>
+                  <li>Embed Tweet</li>
+                  <li>View Tweet activity</li>
+
+                  {isDeleteClicked ? (
+                    <div className="modal">
+                      <div className="modal-box" ref={modalBoxRef}>
+                        <h3>Delete Tweet?</h3>
+                        <p>This can't be undone and it will be</p>
+                        <p>removed from your profile, the timeline</p>
+                        <p>of any accounts that follow you, and</p>
+                        <p>from Twitter search results.</p>
+                        <form>
+                          <button className="btn btn-md cancel" onClick={() => setIsDeleteClicked(false)}>
+                            Cancel
+                          </button>
+                          <button
+                            className="btn btn-md delete"
+                            onClick={() => deleteTweet(tweet.id, tweet.imgUrl)}
+                          >
+                            Delete
+                          </button>
+                        </form>
+                      </div>
+                    </div>
+                  ) : null}
+                </ul>
+              ) : null}
+            </>
           )}
         </div>
 
