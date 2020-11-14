@@ -32,15 +32,15 @@ const SideBar = () => {
 
   return (
     <nav className="sidebar">
+      <Link to="/" className="twitter-icon">
+        <FaIcons.FaTwitter />
+      </Link>
       <ul>
         <li>
           <Link to="/">
-            <FaIcons.FaTwitter className="twitter-icon" />
+            <RiIcons.RiHome8Line />
+            <span> Home </span>
           </Link>
-        </li>
-        <li>
-          <RiIcons.RiHome8Line />
-          <span> Home </span>
         </li>
         <li>
           <FiHash />

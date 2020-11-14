@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import './styles/styles.scss';
 import { firebaseAuth } from './firebase';
-import Router from './components/Router';
+import Router from './Router';
 
 function App() {
   const [init, setInit] = useState(false);

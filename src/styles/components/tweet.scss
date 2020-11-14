@@ -144,8 +144,33 @@
       padding: 0.5rem 3rem 0.5rem 0;
       color: rgba(0, 0, 0, 0.4);
 
-      svg {
-        cursor: pointer;
+      span {
+        width: 35px;
+        height: 35px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border-radius: 50%;
+
+        svg {
+          cursor: pointer;
+        }
+
+        &:nth-child(1):hover,
+        &:nth-child(4):hover {
+          background-color: var(--primary-hover);
+          color: var(--primary);
+        }
+
+        &:nth-child(2):hover {
+          background-color: rgb(225, 240, 231);
+          color: rgb(0, 255, 98);
+        }
+
+        &:nth-child(3):hover {
+          background-color: rgb(244, 225, 231);
+          color: rgb(255, 0, 81);
+        }
       }
     }
   }

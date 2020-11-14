@@ -83,10 +83,18 @@ const Tweet = ({ tweet, isCreator, deleteTweet }) => {
         <div className="tweet__text">{tweet.text}</div>
         <div className="tweet__file">{tweet.imgUrl && <img src={tweet.imgUrl} alt="img" />}</div>
         <div className="tweet__footer">
-          <FaRegComment />
-          <AiIcons.AiOutlineRetweet />
-          <AiIcons.AiOutlineHeart />
-          <FiIcons.FiShare />
+          <span>
+            <FaRegComment />
+          </span>
+          <span>
+            <AiIcons.AiOutlineRetweet />
+          </span>
+          <span>
+            <AiIcons.AiOutlineHeart />
+          </span>
+          <span>
+            <FiIcons.FiShare />
+          </span>
         </div>
       </div>
     </li>

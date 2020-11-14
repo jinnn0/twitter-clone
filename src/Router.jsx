@@ -1,10 +1,10 @@
 import React from 'react';
 import { HashRouter, Route, Switch } from 'react-router-dom';
-import Auth from '../routes/Auth';
-import Feed from '../routes/Feed';
-import Profile from '../routes/Profile';
-import Sidebar from './Sidebar';
-import Widget from './Widget';
+import Auth from './routes/Auth';
+import Feed from './routes/Feed';
+import Profile from './routes/Profile';
+import Sidebar from './components/Sidebar';
+import Widget from './components/Widget';
 
 const Router = ({ isLoggedIn, currentUser, refreshCurrentUser }) => {
   return (

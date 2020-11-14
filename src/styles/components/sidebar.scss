@@ -5,6 +5,27 @@
     width: 275px;
   }
 
+  .twitter-icon {
+    width: 50px;
+    height: 50px;
+    padding: 0.8rem;
+    border-radius: 50%;
+    display: block;
+    margin-left: 1rem;
+    margin-bottom: 1rem;
+    color: var(--primary);
+    font-size: 1.5rem;
+    cursor: pointer;
+
+    svg {
+      font-size: 1.5rem;
+    }
+
+    &:hover {
+      background-color: var(--primary-hover);
+    }
+  }
+
   ul {
     height: 100%;
     padding: 1rem;
@@ -23,16 +44,11 @@
     }
 
     li {
-      width: 100%;
       margin-bottom: 1rem;
       border-radius: 30px;
       padding: 0.8rem;
       font-weight: bold;
       cursor: pointer;
-
-      &:first-of-type {
-        padding-top: 0;
-      }
 
       &:last-of-type {
         width: calc(100% - 2rem);
@@ -44,17 +60,6 @@
         span:nth-of-type(2) {
           padding-top: 4px;
         }
-      }
-
-      .twitter-icon {
-        display: flex;
-        align-items: center;
-        font-weight: bold;
-        color: var(--primary);
-      }
-
-      a {
-        width: 100%;
       }
 
       svg {

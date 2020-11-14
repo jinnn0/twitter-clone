@@ -1,5 +1,6 @@
 :root {
   --primary: rgb(0, 157, 250);
+  --primary-hover: rgb(233, 246, 253);
   --border: rgba(0, 0, 0, 0.068);
 }
 
@@ -103,7 +104,6 @@ input {
 }
 
 .btn-danger {
-  // background-color: rgb(255, 34, 34);
   background-color: rgb(222, 41, 96);
   color: white;
 }

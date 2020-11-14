@@ -3,8 +3,6 @@ import useFirestorage from '../hooks/useFirestorage';
 import { firebaseStorage } from '../firebase';
 import { HiUserCircle } from 'react-icons/hi';
 import { BiImage } from 'react-icons/bi';
-import { MdGif } from 'react-icons/md';
-import { RiBarChartHorizontalFill } from 'react-icons/ri';
 import { GrEmoji } from 'react-icons/gr';
 import { GrSchedulePlay } from 'react-icons/gr';
 
@@ -41,7 +39,7 @@ const NewTweet = ({ currentUser, addTweet }) => {
   return (
     <div className="newTweet">
       <div className="col-1">
-        {currentUser.avatar ? (
+        {currentUser && currentUser.avatar ? (
           <img src={currentUser.avatar} alt="user-img" className="avatar" />
         ) : (
           <HiUserCircle className="avatar" />
@@ -71,8 +69,6 @@ const NewTweet = ({ currentUser, addTweet }) => {
             <BiImage />
             <input id="file-input" type="file" accept="image/*" onChange={handleFileUpload} />
           </label>
-          <MdGif />
-          <RiBarChartHorizontalFill />
           <GrEmoji />
           <GrSchedulePlay />
           <button type="submit" className="btn btn-md btn-primary tweet-btn">
