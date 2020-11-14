@@ -1,17 +1,12 @@
 import React from 'react';
-import {
-  TwitterTimelineEmbed,
-  TwitterShareButton,
-  TwitterTweetEmbed,
-  TwitterVideoEmbed
-} from 'react-twitter-embed';
+import { TwitterShareButton, TwitterTweetEmbed, TwitterVideoEmbed } from 'react-twitter-embed';
 
 const Widget = () => {
   return (
     <div className="widget">
-      <TwitterTimelineEmbed sourceType="profile" screenName="saurabhnemade" options={{ height: 400 }} />
-      <TwitterTweetEmbed tweetId={'933354946111705097'} />
-      <TwitterVideoEmbed id={'560070183650213889'} />
+      <TwitterTweetEmbed tweetId={'1175348725725761537'} />
+      <TwitterVideoEmbed id={'1325112938626228226'} />
+      <TwitterTweetEmbed tweetId={'1292440518186749953'} />
       <TwitterShareButton
         url={'https://facebook.com/saurabhnemade'}
         options={{ text: '#reactjs is awesome', via: 'saurabhnemade' }}

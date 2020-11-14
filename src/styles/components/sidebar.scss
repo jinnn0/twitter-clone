@@ -27,7 +27,7 @@
   }
 
   ul {
-    height: 100%;
+    height: calc(100% - 50px - 1rem);
     padding: 1rem;
     padding-top: 0;
     position: relative;
