@@ -3,10 +3,13 @@
   border-right: 1px solid var(--border);
 
   .feed__header {
+    position: sticky;
+    top: 0;
     background-color: white;
     height: 60px;
     font-weight: bold;
     padding: 1rem;
     border-bottom: 1px solid var(--border);
+    z-index: 10;
   }
 }
