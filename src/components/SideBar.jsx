@@ -12,7 +12,7 @@ import { CgMoreO } from 'react-icons/cg';
 import { HiUserCircle } from 'react-icons/hi';
 import { MdKeyboardArrowDown } from 'react-icons/md';
 
-const SideBar = () => {
+const Sidebar = () => {
   const [isClicked, setIsClicked] = useState(false);
   const history = useHistory();
   const moreBtnRef = useRef();
@@ -91,4 +91,4 @@ const SideBar = () => {
   );
 };
 
-export default SideBar;
+export default Sidebar;
