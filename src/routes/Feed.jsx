@@ -3,6 +3,7 @@ import Tweet from '../components/Tweet';
 import NewTweet from '../components/NewTweet';
 import { firebaseStore, firebaseStorage } from '../firebase';
 import useFirestore from '../hooks/useFirestore';
+import FlipMove from 'react-flip-move';
 
 const Home = ({ currentUser }) => {
   const tweets = useFirestore();
@@ -35,14 +36,16 @@ const Home = ({ currentUser }) => {
       </div>
       <NewTweet currentUser={currentUser} addTweet={addTweet} />
       <ul>
-        {tweets.map((tweet) => (
-          <Tweet
-            key={tweet.id}
-            tweet={tweet}
-            isCreator={tweet.creatorId === currentUser.uid}
-            deleteTweet={deleteTweet}
-          />
-        ))}
+        <FlipMove leaveAnimation="none">
+          {tweets.map((tweet) => (
+            <Tweet
+              key={tweet.id}
+              tweet={tweet}
+              isCreator={tweet.creatorId === currentUser.uid}
+              deleteTweet={deleteTweet}
+            />
+          ))}
+        </FlipMove>
       </ul>
     </div>
   );

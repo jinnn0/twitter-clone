@@ -1,12 +1,11 @@
-import React, { useRef, useState } from 'react';
+import React, { useRef, useState, forwardRef } from 'react';
 import * as FiIcons from 'react-icons/fi';
 import { HiUserCircle } from 'react-icons/hi';
 import { FaRegComment } from 'react-icons/fa';
 import * as AiIcons from 'react-icons/ai';
-
 import useOnClickOutside from '../hooks/useOnClickOutside';
 
-const Tweet = ({ tweet, isCreator, deleteTweet }) => {
+const Tweet = forwardRef(({ tweet, isCreator, deleteTweet }, ref) => {
   const [isMoreClicked, setIsMoreClicked] = useState(false);
   const [isDeleteClicked, setIsDeleteClicked] = useState(false);
   const moreMenuRef = useRef();
@@ -21,7 +20,7 @@ const Tweet = ({ tweet, isCreator, deleteTweet }) => {
   });
 
   return (
-    <li className="tweet">
+    <li ref={ref} className="tweet">
       <div className="col-1">
         {tweet.user.avatar ? (
           <img src={tweet.user.avatar} alt="avatar" className="avatar" />
@@ -99,6 +98,6 @@ const Tweet = ({ tweet, isCreator, deleteTweet }) => {
       </div>
     </li>
   );
-};
+});
 
 export default Tweet;
