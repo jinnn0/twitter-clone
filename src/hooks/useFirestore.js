@@ -7,7 +7,7 @@ const useFirestore = () => {
   useEffect(() => {
     const unsub = firebaseStore
       .collection('tweets')
-      .orderBy('createdAt', 'asc')
+      .orderBy('createdAt', 'desc')
       .onSnapshot((snap) => {
         const tweets = snap.docs.map((doc) => ({ ...doc.data(), id: doc.id }));
         setTweets(tweets);
