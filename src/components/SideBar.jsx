@@ -23,7 +23,7 @@ const Sidebar = () => {
   };
 
   const openLogOutBtn = () => {
-    setIsClicked(true);
+    setIsClicked(!isClicked);
   };
 
   useOnClickOutside(moreBtnRef, () => {
@@ -82,7 +82,7 @@ const Sidebar = () => {
         </li>
 
         {isClicked ? (
-          <button ref={moreBtnRef} className="btn btn-md btn-danger logout" onClick={handleLogOut}>
+          <button className="btn btn-md btn-danger logout" onClick={handleLogOut}>
             Log out
           </button>
         ) : null}
